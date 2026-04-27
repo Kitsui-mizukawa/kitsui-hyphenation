@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Hyphenation</title>
+    <style>
+        body {
+            background-color: #323232;
+            color: #eeeeee;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .header {
+            padding: 20px 20px;
+            text-align: center;
+            font-size: 22px;
+            letter-spacing: 0.5px;
+            border-bottom: 1px solid #444;
+            background: #2b2b2b;
+        }
+        
+        .header .title {
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .content {
+            background-color: #323232;
+            flex: 1;
+            padding: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            overflow-y: auto;
+        }
+
+        .card {
+            background: #404040;
+            border-radius: 16px; /* more rounded */
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            width: 100%;
+            max-width: 500px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .input-group {
+            width: 100%;
+            position: relative;
+            margin-bottom: 24px;
+        }
+
+        .input-box {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #555555;
+            padding: 16px 20px;
+            font-size: 18px;
+            text-align: center;
+            border-radius: 12px; /* more rounded */
+            color: #ffffff;
+            outline: none;
+            transition: all 0.2s ease;
+            background: #252525;
+            font-weight: 500;
+            font-style: normal;
+        }
+
+        .input-box::placeholder {
+            color: #777777;
+            font-style: normal;
+        }
+
+        .input-box:focus {
+            border-color: #7a7a7a;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+        }
+
+        /* Removed unused icon styles */
+
+        .output-box {
+            width: 100%;
+            box-sizing: border-box;
+            border: 1px solid #555555;
+            padding: 20px;
+            font-size: 22px;
+            text-align: center;
+            border-radius: 12px; /* more rounded */
+            color: #ffffff;
+            min-height: 68px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            background: #252525;
+            box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .dot {
+            color: #ff5c5c;
+            margin: 0 3px;
+            font-size: 26px;
+            line-height: 1;
+            vertical-align: middle;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <span class="title">Kitsui Hyphenation</span>
+    </div>
+
+    <div class="content">
+        <div class="card">
+            
+            <div class="input-group">
+                <input type="text" id="word-input" class="input-box" placeholder="Type a word..." autocomplete="off" autofocus>
+            </div>
+
+            <div class="output-box" id="word-output"></div>
+
+        </div>
+    </div>
+
+    <!-- The bundled logic -->
+    <script src="bundle.js"></script>
+</body>
+</html>
